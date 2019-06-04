@@ -8,7 +8,6 @@ class UserService extends Service {
     if(res.length==0){
         result = {code:201,message:"没有该用户"}
     }else{
-        console.log(res[0].password)
         res[0].password==curuser.password?
         result = {code:200,message:"登陆成功"}:
         result = {code:201,message:"密码不正确"}

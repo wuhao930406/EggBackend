@@ -4,8 +4,9 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index() {
-    const { app,ctx } = this;
-    ctx.body = "Hello,welcome to edu backend";
+    const { app,ctx } = this,
+    {query} = ctx;
+    ctx.body = query.username+"sb";
   }
 }
 
