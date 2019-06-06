@@ -53,6 +53,11 @@ module.exports = appInfo => {
     agent: false,
   };
 
+  //文件上传
+  config.multipart = {
+    mode: 'file',
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
