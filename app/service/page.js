@@ -78,7 +78,6 @@ class PageService extends Service {
         message:`变更${res.name}的跳转地址成功！`
       };
     }, ctx);
-
     return result;
   }
 
