@@ -112,6 +112,96 @@ class PageService extends Service {
     return result;
   }
 
+  async getadv (){
+    let {app,ctx} = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      let res = await conn.select("index_adv");
+      return {
+        code:200,
+        data:res,
+        message:null
+      };
+    }, ctx);
+    return result;
+  }
+
+  async updateadv (data){
+    let {app,ctx} = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      await conn.delete("index_adv");
+      let res = await conn.insert("index_adv",data);
+      return {
+        code:200,
+        data:res,
+        message:null
+      };
+    }, ctx);
+    return result;
+  }
+
+
+  async getaboutus (){
+    let {app,ctx} = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      let res = await conn.select("about_us");
+      return {
+        code:200,
+        data:res[0],
+        message:null
+      };
+    }, ctx );
+    return result;
+  }
+
+  async updateaboutus (data){
+    let {app,ctx} = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      let res = await conn.update("about_us",data,{
+        where: {
+          id:1
+        }
+      });
+      return {
+        code:200,
+        data:res,
+        message:null
+      };
+    }, ctx);
+    return result;
+  }
+
+  
+  async getservice (){
+    let {app,ctx} = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      let res = await conn.select("service_desc");
+      return {
+        code:200,
+        data:res,
+        message:null
+      };
+    }, ctx );
+    return result;
+  }
+
+
+  async updateservice (data){
+    let {app,ctx} = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      await conn.delete("service_desc");
+      let res = await conn.insert("service_desc",data);
+      return {
+        code:200,
+        data:res,
+        message:null
+      };
+    }, ctx);
+    return result;
+  }
+
 }
+
+
+
 
 module.exports = PageService;
