@@ -22,4 +22,10 @@ module.exports = app => {
   router.get('/page/getservice', controller.page.getservice);//服务
   router.post('/page/updateservice', controller.page.updateservice);//服务更新
 
+  router.get('/about/getenv', controller.aboutus.getall);//banner图
+  router.post('/about/envinsert', controller.aboutus.insert);//banner图insert
+  router.post('/about/envupdate', controller.aboutus.update);//banner图update
+  router.post('/about/envdelete', controller.aboutus.delete);//banner图delete
+
+  
 };
