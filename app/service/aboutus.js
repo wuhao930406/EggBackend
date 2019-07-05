@@ -67,7 +67,6 @@ class AboutusService extends Service {
     const result = await app.mysql.beginTransactionScope(async conn => {
       let res = await conn.get("work_env",{uid:data.uid});
       let postdata = { ...res, picname:data.picname };
-      console.log(res)
       await conn.update("work_env",postdata,{
         where: {
           uid:data.uid
@@ -95,7 +94,6 @@ class AboutusService extends Service {
           if(err){
                throw err;
           }
-            console.log('文件:'+filePath+'删除成功！');
           })
         
       }else{
