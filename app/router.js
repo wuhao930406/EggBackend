@@ -27,5 +27,12 @@ module.exports = app => {
   router.post('/about/envupdate', controller.aboutus.update);//banner图update
   router.post('/about/envdelete', controller.aboutus.delete);//banner图delete
 
+  router.post('/about/insertdevlop', controller.aboutus.insertdevlop);//banner图
+  router.post('/about/updatedevlop', controller.aboutus.updatedevlop);//banner图
+  router.get('/about/getdevlop', controller.aboutus.getdevlop);//banner图
+
+  router.post('/about/updateachieve', controller.aboutus.updateachieve);//banner图
+  router.get('/about/getachieve', controller.aboutus.getachieve);//banner图
   
+
 };
