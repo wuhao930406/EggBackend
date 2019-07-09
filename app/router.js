@@ -33,6 +33,10 @@ module.exports = app => {
 
   router.post('/about/updateachieve', controller.aboutus.updateachieve);//banner图
   router.get('/about/getachieve', controller.aboutus.getachieve);//banner图
+
+  router.get('/service/getcourse',  controller.services.getcourse);
+
+  router.post('/service/insertcourse',  controller.services.insertcourse);
   
 
 };
