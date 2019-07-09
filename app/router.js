@@ -37,6 +37,7 @@ module.exports = app => {
   router.get('/service/getcourse',  controller.services.getcourse);
 
   router.post('/service/insertcourse',  controller.services.insertcourse);
-  
+  router.post('/service/updatecourse',  controller.services.updatecourse);
+
 
 };

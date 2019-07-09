@@ -22,7 +22,14 @@ class ServiceController extends Controller {
     }
   }
 
-
+  async updatecourse() {
+    const { ctx } = this;
+    let result = await ctx.service.services.updatecourse(ctx.request.body);
+    ctx.body = result ? result : {
+      code: 201,
+      message: "服务器已断开"
+    }
+  }
 
 }
 

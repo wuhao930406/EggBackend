@@ -21,13 +21,10 @@ class ServiceService extends Service {
       let coursedesc = await conn.select("service_all_desc");
       let cmodule = await conn.select("course_module");
       let cpro = await conn.select("course_pro");
-      console.log(coursedesc);
-      console.log(cmodule);
-      console.log(cpro);
       return {
         code: 200,
         data: {
-          coursedesc: coursedesc[0],
+          coursedesc: coursedesc[0].coursedesc,
           cmodule,
           cpro
         },
@@ -39,7 +36,6 @@ class ServiceService extends Service {
 
   async insertcourse(file,type) {
     let { app, ctx } = this;
-    //写入单个文件并insert到数据库
     //创建读取流
     const reader = fs.createReadStream(file.filepath);
     //获取后缀
@@ -54,6 +50,7 @@ class ServiceService extends Service {
       };
     // 创建可写流
     const upStream = fs.createWriteStream(filePath);
+    console.log(upStream)
     // 可读流通过管道写入可写流
     reader.pipe(upStream);
     return {
@@ -64,7 +61,32 @@ class ServiceService extends Service {
   }
 
 
-
+  async updatecourse(data) {
+    let { app, ctx } = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      await conn.delete("course_module");
+      await conn.delete("course_pro");
+      await conn.update("service_all_desc", {coursedesc:data.coursedesc}, {
+        where: {
+          id: 1
+        }
+      });
+      let res;
+      if (data) {
+        await conn.insert("course_module", data.cmodule);
+        await conn.insert("course_pro", data.cpro);
+        res = "操作成功"
+      } else {
+        res = "暂无数据"
+      }
+      return {
+        code: 200,
+        data: res,
+        message: `操作成功！`
+      };
+    }, ctx);
+    return result;
+  }
 
 
 
