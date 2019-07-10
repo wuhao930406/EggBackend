@@ -12,7 +12,7 @@ module.exports = app => {
   router.post('/page/bannerinsert', controller.page.insert);//banner图insert
   router.post('/page/bannerupdate', controller.page.update);//banner图update
   router.post('/page/bannerdelete', controller.page.delete);//banner图delete
-  
+
   router.get('/page/getadv', controller.page.getadv);//index优势
   router.post('/page/updateadv', controller.page.updateadv);//index优势 update
 
@@ -34,10 +34,15 @@ module.exports = app => {
   router.post('/about/updateachieve', controller.aboutus.updateachieve);//banner图
   router.get('/about/getachieve', controller.aboutus.getachieve);//banner图
 
-  router.get('/service/getcourse',  controller.services.getcourse);
+  router.get('/service/getcourse', controller.services.getcourse);
+  router.post('/service/insertcourse', controller.services.insertcourse);
+  router.post('/service/updatecourse', controller.services.updatecourse);
 
-  router.post('/service/insertcourse',  controller.services.insertcourse);
-  router.post('/service/updatecourse',  controller.services.updatecourse);
+  router.get('/service/getschool', controller.services.getschool);
+  router.post('/service/updateschool', controller.services.updateschool);
 
+  router.get('/service/getedu', controller.services.getedu);
+  router.post('/service/insertedu', controller.services.insertedu);
+  router.post('/service/deletedu', controller.services.deletedu);
 
 };
