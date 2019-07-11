@@ -44,5 +44,7 @@ module.exports = app => {
   router.get('/service/getedu', controller.services.getedu);
   router.post('/service/insertedu', controller.services.insertedu);
   router.post('/service/deletedu', controller.services.deletedu);
+  router.post('/service/updatedu', controller.services.updatedu);
 
+  
 };

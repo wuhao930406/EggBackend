@@ -84,7 +84,6 @@ class ServiceService extends Service {
       };
     // 创建可写流
     const upStream = fs.createWriteStream(filePath);
-    console.log(upStream)
     // 可读流通过管道写入可写流
     reader.pipe(upStream);
     return {
@@ -110,7 +109,6 @@ class ServiceService extends Service {
       };
     // 创建可写流
     const upStream = fs.createWriteStream(filePath);
-    console.log(upStream)
     // 可读流通过管道写入可写流
     reader.pipe(upStream);
     return {
@@ -119,29 +117,44 @@ class ServiceService extends Service {
       message: `上传成功`
     };
   }
-
   async deletedu(data) {
     let { app, ctx } = this;
-    console.log()
-    let filePath = path.join(__dirname, "..", data.url), 
-    result = await fs.unlink(filePath, function (err) {
+    let filePath = path.join(__dirname, "..", data.url);
+    await fs.unlink(filePath, function (err) {
       if (err) {
-        return result = {
-          code: 201,
-          data: err,
-          message: `删除失败`
-        };
+        throw err
       }
-      return result = {
-        code: 200,
-        data: filePath,
-        message: `删除成功`
-      };
     })
-
-    return result;
+    let result={
+      code:200,
+      message:"删除成功"
+    };
+    return result
   }
 
+  async updatedu(data) {
+    let { app, ctx } = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      await conn.delete("edu_pro");
+      await conn.update("service_all_desc", { edudesc: data.edudesc }, {
+        where: {
+          id: 1
+        }
+      });
+      let res;
+      if (data) {
+        res = await conn.insert("edu_pro", data.epro);
+      } else {
+        res = "暂无数据"
+      }
+      return {
+        code: 200,
+        data: res,
+        message: `操作成功！`
+      };
+    }, ctx);
+    return result;
+  }
 
 
   async updatecourse(data) {

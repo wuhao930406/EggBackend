@@ -4,8 +4,8 @@ const Controller = require('egg').Controller;
 
 class ServiceController extends Controller {
   async getcourse() {
-    const { app,ctx } = this;
-    let result = await ctx.service.services.getcourse(); 
+    const { app, ctx } = this;
+    let result = await ctx.service.services.getcourse();
     ctx.body = result ? result : {
       code: 201,
       message: "服务器已断开"
@@ -14,7 +14,7 @@ class ServiceController extends Controller {
 
   async insertcourse() {
     const { ctx } = this;
-    let result = await ctx.service.services.insertcourse(ctx.request.files[0],ctx.request.body.type);
+    let result = await ctx.service.services.insertcourse(ctx.request.files[0], ctx.request.body.type);
     ctx.body = result ? result : {
       code: 201,
       message: "服务器已断开"
@@ -32,8 +32,8 @@ class ServiceController extends Controller {
 
 
   async getschool() {
-    const { app,ctx } = this;
-    let result = await ctx.service.services.getschool(); 
+    const { app, ctx } = this;
+    let result = await ctx.service.services.getschool();
     ctx.body = result ? result : {
       code: 201,
       message: "服务器已断开"
@@ -50,8 +50,8 @@ class ServiceController extends Controller {
   }
 
   async getedu() {
-    const { app,ctx } = this;
-    let result = await ctx.service.services.getedu(); 
+    const { app, ctx } = this;
+    let result = await ctx.service.services.getedu();
     ctx.body = result ? result : {
       code: 201,
       message: "服务器已断开"
@@ -60,7 +60,7 @@ class ServiceController extends Controller {
 
   async insertedu() {
     const { ctx } = this;
-    let result = await ctx.service.services.insertedu( ctx.request.files[0] );
+    let result = await ctx.service.services.insertedu(ctx.request.files[0]);
     ctx.body = result ? result : {
       code: 201,
       message: "服务器已断开"
@@ -69,13 +69,21 @@ class ServiceController extends Controller {
 
   async deletedu() {
     const { ctx } = this;
-    let result = await ctx.service.services.deletedu( ctx.request.body );
+    let result = await ctx.service.services.deletedu(ctx.request.body);
     ctx.body = result ? result : {
       code: 201,
       message: "服务器已断开"
     }
   }
-  
+  async updatedu() {
+    const { ctx } = this;
+    let result = await ctx.service.services.updatedu(ctx.request.body);
+    ctx.body = result ? result : {
+      code: 201,
+      message: "服务器已断开"
+    }
+  }
+
 }
 
 module.exports = ServiceController;
