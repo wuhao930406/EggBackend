@@ -5,7 +5,8 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.index);
+  router.get('/', controller.home.wechat);
+  
   router.post('/login', controller.user.login);
 
   router.get('/page/getall', controller.page.getall);//banner图
