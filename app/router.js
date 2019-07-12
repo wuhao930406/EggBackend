@@ -47,5 +47,7 @@ module.exports = app => {
   router.post('/service/deletedu', controller.services.deletedu);
   router.post('/service/updatedu', controller.services.updatedu);
 
+  router.get('/cooperate/getcooperate', controller.cooperate.getcooperate);
+  router.post('/cooperate/updatecooperate', controller.cooperate.updatecooperate);
   
 };
