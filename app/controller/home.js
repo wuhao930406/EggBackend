@@ -14,23 +14,31 @@ module.exports = app => {
       });
       let url = encodeURI('http://257143q68a.zicp.vip:19556/public/WxHxd/html/index.html')
       let btn = {
-        "button":[
-        {    
-             "type":"click",
-             "name":"test",
-             "key":"V1001_TODAY_MUSIC",
-             "url":`https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=${url}&response_type=code&scope=snsapi_userinfo#wechat_redirect`,
-         }
+        "button": [
+          {
+            "type": "click",
+            "name": "test",
+            "key": "V1001_TODAY_MUSIC",
+          },
+          {
+            "name": "菜单",
+            "sub_button": [
+              {
+                "type": "view",
+                "name": "搜索",
+                "url": `https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx60399ad3e55aebdf&redirect_uri=${url}&response_type=code&scope=snsapi_userinfo#wechat_redirect`
+              },
+             ]
+          }
         ]
       }
-      
       const res = await ctx.curl(`https://api.weixin.qq.com/cgi-bin/menu/create?access_token=${result.data.access_token}`, {
         method: "POST",
         dataType: "json",
         data: JSON.stringify(btn),
         headers: this.app.config.headers
       });
-  
+
       ctx.body = res;
     }
   }
@@ -40,7 +48,11 @@ module.exports = app => {
     appid: 'wx60399ad3e55aebdf',
     encodingAESKey: ''
   }).middleware(async (message, ctx) => {
-    return 'Hello world!';
+    if (message.Content === '徐涛') {
+      return '250';
+    }else{
+      return "250"
+    }
   });
 
   return HomeController;
