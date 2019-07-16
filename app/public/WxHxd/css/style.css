@@ -1,0 +1,132 @@
+#test1 {
+    width: 100% !important;
+    height: 218px !important;
+    box-shadow: 0px 2px 1px #f0f0f0
+}
+
+.widths {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important
+}
+
+.ttle {
+    font-size: 18px;
+    color: #333;
+    border-left: darkred solid 4px;
+    padding-left: 10px;
+    margin: 18px 0px
+}
+
+.hovered {
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 2px transparent;
+    transition: all 0.4s;
+    min-height: 95px;
+}
+
+.hovered:hover {
+    box-shadow: 0px 0px 2px #eee;
+    transition: all 0.4s
+}
+
+.itemh2 {
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    color: darkred;
+    padding-bottom: 6px;
+}
+
+.itemh2 span {
+    color: #333;
+    font-size: 14px;
+}
+
+.itemp {
+    width: 100%;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    color: #666
+}
+.itemps {
+    width: 100%;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+    color: #666
+}
+.itemps span{
+    color:darkred;
+    font-size: 18px;
+}
+.layui-colla-content,
+.layui-card-body {
+    overflow: hidden;
+}
+.layui-card-body .itemh2 {
+    font-size: 18px;
+}
+.flexrow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.flexrow li{
+    flex: 0.24;
+    min-height: 60px;
+    background-color: coral;
+    color: #fff;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.flexrow li+li{
+    background-color:#13c2c2;
+}
+.flexrow li+li+li{
+    background-color: slategrey;
+}
+.flexrow li+li+li+li{
+    background-color: #ff5000;
+}
+.contain{
+    background-color: #f9f9f9;
+    padding: 12px;
+}
+/*contactus.css*/
+.contactImg{
+	width: 100%;
+	display: block;
+}
+.contactFrow{
+	width: 80%;
+	margin: 0 auto;
+	background: #E6E6E6;
+	padding: 0.5rem 1rem 0.1rem 0;
+}
+.contactFrow .tit{
+	padding:0 0 1rem 1.5rem;            
+	font-size: 20px;
+	color: #666;
+}
+.pcons p{
+    display: block;
+}
+.pcons p:nth-child(2){
+    padding: 9px 0px;
+    margin: 9px 0px;
+    border-top: #f0f0f0 dashed 1px;
+    border-bottom: #f0f0f0 dashed 1px;
+}
+.pcons p span{
+    color: darkred
+}
+.layui-form-label{
+    color: darkred
+}
