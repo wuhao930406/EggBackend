@@ -8,6 +8,11 @@ module.exports = app => {
   router.all('/', controller.home.wechat);
   router.get('/index', controller.home.index);
 
+  router.get('/getwx', controller.home.getwx);
+  router.post('/postwx', controller.home.postwx);
+
+
+
   router.post('/login', controller.user.login);
 
   router.get('/page/getall', controller.page.getall);//banner图
@@ -50,5 +55,8 @@ module.exports = app => {
 
   router.get('/cooperate/getcooperate', controller.cooperate.getcooperate);
   router.post('/cooperate/updatecooperate', controller.cooperate.updatecooperate);
+
+
+
   
 };

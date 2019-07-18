@@ -40,6 +40,31 @@ module.exports = app => {
       });
       ctx.body = res;
     }
+
+    async getwx() {
+      const { ctx } = this;
+      let result = await ctx.service.home.getwx(); 
+      ctx.body = result?result:{
+        code:201,
+        message:"服务器已断开"
+      }
+
+
+    }
+
+    async postwx() {
+      const { ctx } = this;
+      let data = ctx.request.body;
+      let result = await ctx.service.home.postwx(data); 
+      ctx.body = result?result:{
+        code:201,
+        message:"服务器已断开"
+      }
+
+
+    }
+
+
   }
   // 因为 Egg 需要用类的形式来组织，而 wechat 是通过 middleware 方法来生成中间件
   HomeController.prototype.wechat = wechat({

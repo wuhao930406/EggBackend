@@ -57,7 +57,7 @@
                             <div class="layui-form-item layui-form-text">
                                 <label class="layui-form-label">留言信息*</label>
                                 <div class="layui-input-block">
-                                    <textarea placeholder="" class="layui-textarea"></textarea>
+                                    <textarea placeholder="" name="message" class="layui-textarea"></textarea>
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -78,19 +78,37 @@
 
 </body>
 <script src="../layui.all.js"></script>
-<script src="../lay/modules/jquery.js"></script>
+<script src="../js/jquery-3.4.1.min.js"></script>
 <script src="../lay/modules/layer.js" type="text/javascript" charset="utf-8"></script>
 <script>
     //Demo
     layui.use('form', function () {
         var form = layui.form;
-
         //监听提交
         form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
+            submitMessage(data.field)
             return false;
         });
     });
+
+    function submitMessage(data){
+        $.ajax({
+            url:"http://localhost:7001/postwx",
+            type:"POST",
+            data:data,
+            dataType:"json",
+            success:function(res){
+                layer.msg(JSON.stringify(res.message));
+            },
+            error:function(e){
+                console.log(e)
+            }
+        })
+
+
+    }    
+
+
 </script>
 
 </html>
