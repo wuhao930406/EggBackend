@@ -38,7 +38,6 @@ module.exports = app => {
         data: JSON.stringify(btn),
         headers: this.app.config.headers
       });
-
       ctx.body = res;
     }
   }
