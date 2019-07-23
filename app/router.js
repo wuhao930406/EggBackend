@@ -56,6 +56,8 @@ module.exports = app => {
   router.get('/cooperate/getcooperate', controller.cooperate.getcooperate);
   router.post('/cooperate/updatecooperate', controller.cooperate.updatecooperate);
 
+  router.get('/contact/getcontact', controller.contact.getcontact);
+  router.post('/contact/insertqrcode', controller.contact.insertqrcode);
 
 
   
