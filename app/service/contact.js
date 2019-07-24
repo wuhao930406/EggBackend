@@ -23,7 +23,7 @@ class ContactService extends Service {
       return {
         code: 200,
         data: {
-          contact,
+          contact:contact[0],
           model
         },
         message: ``
@@ -59,14 +59,14 @@ class ContactService extends Service {
     };
   }
 
-  /*async updatecontact(data) {
+  async updatecontact(data) {
     let { app, ctx } = this;
     const result = await app.mysql.beginTransactionScope(async conn => {
-      await conn.delete("contact_adv");
+      await conn.delete("contact");
       await conn.delete("contact_model");
       let res;
       if (data) {
-        await conn.insert("contact_adv", data.adv);
+        await conn.insert("contact", data.contact);
         await conn.insert("contact_model", data.model);
         res = "操作成功"
       } else {
@@ -79,7 +79,7 @@ class ContactService extends Service {
       };
     }, ctx);
     return result;
-  }*/
+  }
 
 
 

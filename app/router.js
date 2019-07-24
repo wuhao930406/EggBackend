@@ -58,7 +58,7 @@ module.exports = app => {
 
   router.get('/contact/getcontact', controller.contact.getcontact);
   router.post('/contact/insertqrcode', controller.contact.insertqrcode);
+  router.post('/contact/updatecontact', controller.contact.updatecontact);
 
 
-  
 };
