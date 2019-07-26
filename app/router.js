@@ -60,5 +60,7 @@ module.exports = app => {
   router.post('/contact/insertqrcode', controller.contact.insertqrcode);
   router.post('/contact/updatecontact', controller.contact.updatecontact);
 
-
+  router.get('/public/getpublic', controller.publicedu.getpublic);
+  router.post('/public/insertpublic', controller.publicedu.insertpublic);
+  router.post('/public/updatepublic', controller.publicedu.updatepublic);
 };
