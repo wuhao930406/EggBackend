@@ -10,7 +10,7 @@ module.exports = app => {
 
   router.get('/getwx', controller.home.getwx);
   router.post('/postwx', controller.home.postwx);
-
+  router.post('/deletewx', controller.home.deletewx);
 
 
   router.post('/login', controller.user.login);

@@ -4,6 +4,22 @@ const path = require('path');
 
 
 class HomeService extends Service {
+
+  async deletewx(data){
+    let {app,ctx} = this;
+    const result = await app.mysql.beginTransactionScope(async conn => {
+      let res = await conn.delete("wxmsg",{
+        id:data.id
+      });
+      return {
+        code:200,
+        data:res,
+        message:`操作成功`
+      };
+    }, ctx);
+    return result;
+  }
+
   async postwx(data){
     let {app,ctx} = this;
     const result = await app.mysql.beginTransactionScope(async conn => {

@@ -128,5 +128,163 @@
     color: darkred
 }
 .layui-form-label{
+    width: 62px;
     color: darkred
 }
+.layui-input-block{
+    margin-left: 92px !important;
+}
+.layui-form-item .layui-input-inline{
+    margin-left: 95px !important;
+}
+
+.mainTitle{
+    border-left: #b22930 solid 4px;
+    font-size: 18px;
+    color:#b22930;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e5e5e5
+}
+svg {
+    width: 30vw;
+    height: 30vw;
+    stroke: #e33f13;
+    
+  }
+  text {
+    stroke: none;
+    fill: #bfbfbf;
+    transition: fill .8s ease-out;
+  }
+  .adden text {
+    stroke: none;
+    fill: #e33f13;
+  }
+  ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1vw;
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #arc {
+    stroke-width:6px;
+  }
+  #graph {
+    stroke-dashoffset: 0;
+    stroke: #bfbfbf;
+    stroke-dasharray: 251.35; 
+    transition: stroke-dashoffset .8s ease-out;
+    stroke-width:7px;
+  }
+  .adden #graph {
+    stroke-dashoffset: calc(  251.35 / 100 * var( --val )  );
+    stroke-dasharray: 251.35; 
+  }
+  .lines{
+      margin-bottom: 30px !important;
+  }
+  .lines span{
+    color: #333;
+    width: 48px;
+    height: 24px;
+    line-height: 24px;
+  }
+  .lines>div{
+      flex:1;
+      background-color: #d2d2d2;
+      height: 24px;
+      border-radius: 600px;
+      overflow: hidden;
+  }
+
+.lines>div>div{
+    width:0px;
+    background-color: #ff8809;
+    height: 24px;
+    border-radius: 600px;
+    overflow: hidden;
+    transition: all 0.6s;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+}
+.tohead{
+    border-bottom: #dddddd solid 1px;
+    box-sizing: border-box;
+    margin-top: 12px;
+}
+.tohead p{
+    text-align: center;
+    border-bottom: #d63231 solid 4px;
+    width: 120px;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 12px;
+    font-size: 20px;
+}
+.todobox{
+    overflow: hidden;
+    width: 96%;
+    margin: 0 auto;
+}
+.todobox ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 0px
+}
+
+.todobox ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+.todobox ul li img{
+    width: 64px;
+    margin-right: 12px;
+}
+.todobox ul li p{
+    flex: 1;
+    background-color: #eeeeee;
+    padding: 8px;
+    border-radius: 6px;
+}
+.todobox ul li p span{
+    display: block;
+    color: #d63233
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

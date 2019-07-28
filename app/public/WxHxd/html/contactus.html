@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>海学达-联系我们</title>
     <link rel="stylesheet" href="../css/layui.css" media="all">
     <link rel="stylesheet" href="../css/layui.mobile.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -13,65 +13,87 @@
 
 <body>
     <img class="contactImg" src="../images/map.png" />
-    <div class="contain">
-        <div class="layui-card">
-            <div class="layui-card-header">我们的地址</div>
-            <div class="layui-card-body pcons">
-                <p>
-                    <span>加拿大:</span>1039 McNicoll Ave Unit 200, Toronto,Ontario, M1H3H8.Canada
-                </p>
-                <p>
-                    <span>山西分部:</span>山西太原市小店区小店街道学府街158号君泰商座11层
-                </p>
-                <p>
-                    <span>总部:</span>中国留学人才发展基金会 留学事业部 北京市海淀区北四环西路67号
-                </p>
-            </div>
+    <div class="contain" style="background-color: #fff">
+        <div class="tohead">
+            <p>我们的地址</p>
         </div>
-        <div class="layui-card">
-            <div class="layui-card-header">联系我们</div>
-            <div class="layui-card-body">
-                    <form class="layui-form" action="">
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">您的姓名*</label>
-                                <div class="layui-input-block">
-                                    <input type="text" name="title" lay-verify="required|title" autocomplete="off" class="layui-input">
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
-                                    <label class="layui-form-label">您的手机*</label>
-                                    <div class="layui-input-inline">
-                                        <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <div class="layui-inline">
-                                    <label class="layui-form-label">您的邮箱*</label>
-                                    <div class="layui-input-inline">
-                                        <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item layui-form-text">
-                                <label class="layui-form-label">留言信息*</label>
-                                <div class="layui-input-block">
-                                    <textarea placeholder="" name="message" class="layui-textarea"></textarea>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <div class="layui-input-block">
-                                    <button class="layui-btn" lay-submit="" lay-filter="formDemo">立即提交</button>
-                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                                </div>
 
+        <div class="todobox">
+            <div class="hideLine"></div>
+            <ul>
+                <li>
+                    <img src="../images/1.jpg" alt="">
+                    <p>
+                        <span>加拿大:</span>1039 McNicoll Ave Unit 200, Toronto,Ontario, M1H3H8.Canada
+                    </p>
+                </li>
+                <li>
+                    <img src="../images/2.jpg" alt="">
+                    <p>
+                        <span>山西分部:</span>山西太原市小店区小店街道学府街158号君泰商座11层
+                    </p>
+
+                </li>
+                <li>
+                    <img src="../images/3.jpg" alt="">
+                    <p>
+                        <span>总部:</span>中国留学人才发展基金会 留学事业部 北京市海淀区北四环西路67号
+                    </p>
+                </li>
+            </ul>
+
+
+        </div>
+
+        <div class="tohead">
+            <p>联系我们</p>
+        </div>
+        <div class="layui-card">
+            <div class="layui-card-body" style="padding-top:36px">
+                <form class="layui-form" action="" id="addGoodsForm">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">您的姓名*</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" lay-verify="required|title" autocomplete="off"
+                                class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">您的手机*</label>
+                            <div class="layui-input-inline">
+                                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
+                                    class="layui-input">
                             </div>
-                
-                        </form>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">您的邮箱*</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="email" lay-verify="email" autocomplete="off"
+                                    class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">留言信息*</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="" name="message" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button style="background-color:#e43c3c" class="layui-btn" lay-submit="" lay-filter="formDemo">立即提交</button>
+                            <button type="reset" id="resetfields" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+
+                    </div>
+
+                </form>
             </div>
         </div>
-        
+
     </div>
 
 
@@ -86,27 +108,28 @@
         var form = layui.form;
         //监听提交
         form.on('submit(formDemo)', function (data) {
-            submitMessage(data.field)
+            submitMessage(data.field);
             return false;
         });
     });
 
-    function submitMessage(data){
+    function submitMessage(data) {
         $.ajax({
-            url:"http://62.234.184.165:7001/postwx",
-            type:"POST",
-            data:data,
-            dataType:"json",
-            success:function(res){
-                layer.msg(JSON.stringify(res.message));
+            url: "http://62.234.184.165:7001/postwx",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (res) {
+                layer.msg("提交成功，感谢您的反馈...");
+                $("#addGoodsForm")[0].reset();
             },
-            error:function(e){
+            error: function (e) {
                 console.log(e)
             }
         })
 
 
-    }    
+    }
 
 
 </script>
